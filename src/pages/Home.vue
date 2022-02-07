@@ -1,17 +1,21 @@
 <template>
-   <div class="text-center">Vite SSR Example Project</div>
-   <div>Coins: {{ user.coins }}</div>
-  <button @click="increment">Increment</button>
+  <div class="text-center">
+    Vite SSR Example Project
+  </div>
+  <div>Coins: {{ user.coins }}</div>
+  <button @click="increment">
+    Increment
+  </button>
 </template>
 
 <script lang="ts" setup>
-import { useHead } from '@vueuse/head';
-import { computed } from '@vue/runtime-dom';
-import { useStore } from 'vuex';
+import { useHead } from '@vueuse/head'
+import { computed } from '@vue/runtime-dom'
+import { useStore } from 'vuex'
 
 useHead({
   title: 'Home'
-});
+})
 
 const store = useStore()
 
@@ -31,5 +35,6 @@ $color: red;
 
 .text-center {
   color: $color;
+  font-size: 16px;
 }
 </style>

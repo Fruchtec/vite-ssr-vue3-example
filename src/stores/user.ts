@@ -1,17 +1,17 @@
 const state = () => ({
-    coins: 0
+  coins: 0
 })
 
 const mutations = {
-    INCREMENT(state: any) {
-        state.coins++
-    }
+  INCREMENT(state: any) {
+    state.coins++
+  }
 }
 
 const actions = {
-    increment({ commit }: any) {
-        commit('INCREMENT')
-    }
+  increment({ commit }: any) {
+    commit('INCREMENT')
+  }
 }
 //
 // const getters = {
@@ -46,8 +46,8 @@ const actions = {
 // }
 
 export default {
-    state,
-    // getters,
-    mutations,
-    actions
+  state,
+  // getters,
+  mutations,
+  actions
 }

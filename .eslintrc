@@ -1,0 +1,91 @@
+{
+  "root": true,
+  "env": {
+    "vue/setup-compiler-macros": true,
+    "es2021": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021
+  },
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "@vue/typescript/recommended",
+    "airbnb-base"
+  ],
+  "plugins": ["unused-imports"],
+  "globals": {
+    "globalThis": "readonly"
+  },
+  "rules": {
+    "unused-imports/no-unused-imports": "warn",
+    "consistent-return": "off",
+    "quotes": ["warn", "single"],
+    "max-len": "off",
+    "arrow-parens": ["warn", "as-needed"],
+    "comma-dangle": ["warn", "never"],
+    "semi": ["warn", "never"],
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "no-trailing-spaces": "warn",
+    "eol-last": "warn",
+    "no-multiple-empty-lines": "warn",
+    "import/no-extraneous-dependencies": "off",
+    "linebreak-style": "warn",
+    "no-shadow": ["error", { "allow": ["state"] }],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": [
+          "state"
+        ]
+      }
+    ],
+    "no-use-before-define": ["error", { "functions": false }],
+    "import/newline-after-import": "warn",
+    "space-before-function-paren": "warn",
+    "implicit-arrow-linebreak": "off",
+    "array-bracket-spacing": ["warn"],
+    "one-var": [
+      "error",
+      {
+        "var": "never",
+        "let": "never",
+        "const": "never"
+      }
+    ],
+    "no-else-return": "error",
+    "vue/multi-word-component-names": "off",
+    "vue/max-attributes-per-line": [
+      "warn",
+      {
+        "singleline": {
+          "max": 2
+        }
+      }
+    ],
+    "vue/html-closing-bracket-newline": [
+      "warn",
+      {
+        "singleline": "never"
+      }
+    ],
+    "vue/name-property-casing": ["error", "PascalCase"],
+    "vue/component-name-in-template-casing": [
+      "error",
+      "PascalCase",
+      {
+        "registeredComponentsOnly": true,
+        "ignores": []
+      }
+    ],
+    "vue/match-component-file-name": [
+      "error",
+      {
+        "extensions": ["vue"],
+        "shouldMatchCase": false
+      }
+    ]
+  }
+}

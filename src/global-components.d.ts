@@ -1,5 +1,5 @@
-import { RouterLink, RouterView, RouteLocationNormalized } from 'vue-router';
-import { VNode } from 'vue';
+import { RouterLink, RouterView, RouteLocationNormalized } from 'vue-router'
+import { VNode } from 'vue'
 
 declare module 'vue' {
    interface GlobalComponents {
