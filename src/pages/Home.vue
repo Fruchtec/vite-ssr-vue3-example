@@ -1,19 +1,35 @@
-<script lang="ts" setup>
-import { useHead } from '@vueuse/head';
-import { onServerPrefetch } from 'vue';
-import { useAppStore } from '/src/stores/appStore';
-
-const appStore = useAppStore();
-useHead({
-   title: 'Home'
-});
-
-onServerPrefetch(() => {
-   appStore.dataFrom = 'server';
-});
-</script>
-
 <template>
    <div class="text-center">Vite SSR Example Project</div>
-   <div>Message From: {{ appStore.dataFrom }}</div>
+   <div>Coins: {{ user.coins }}</div>
+  <button @click="increment">Increment</button>
 </template>
+
+<script lang="ts" setup>
+import { useHead } from '@vueuse/head';
+import { computed } from '@vue/runtime-dom';
+import { useStore } from 'vuex';
+
+useHead({
+  title: 'Home'
+});
+
+const store = useStore()
+
+const user = computed(() => store.state.user)
+console.log(user.value)
+
+function increment() {
+  store.dispatch('increment')
+}
+
+console.log(user.value)
+
+</script>
+
+<style lang="scss">
+$color: red;
+
+.text-center {
+  color: $color;
+}
+</style>

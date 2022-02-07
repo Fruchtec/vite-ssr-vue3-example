@@ -5,7 +5,7 @@ const express = require('express');
 //@ts-ignore
 global.fetch = nodeFetch;
 
-const dist = `../dist`;
+const dist = `./dist`;
 
 // This contains a list of static routes (assets)
 /** @type {import('../dist/server/package.json')} */
