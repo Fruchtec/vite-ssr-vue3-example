@@ -2,11 +2,8 @@
    "version": "0.0.0",
    "scripts": {
       "dev": "vite-ssr --open",
-      "build": "vite-ssr build && npm run move",
-      "build:deploy": "npm run build && npm run deploy",
-      "move": "node scripts/vercelBuild.js",
-      "start": "node ./_app/server/main.js",
-      "deploy": "cd ./serverless && vercel --prod"
+      "build": "vite-ssr build",
+      "start": "node ./_app/server/main.js"
    },
    "dependencies": {
       "@vue/runtime-dom": "^3.1.5",
