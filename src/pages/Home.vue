@@ -2,9 +2,9 @@
   <div class="text-center">
     Vite SSR Example Project
   </div>
-  <div>Coins: {{ user.coins }}</div>
+  <div><icon-mdi-account /> Coins: {{ user.coins }}</div>
   <button @click="increment">
-    Increment
+     Increment
   </button>
 </template>
 
