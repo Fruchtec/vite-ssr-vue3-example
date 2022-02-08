@@ -5,15 +5,23 @@ import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import Pages from 'vite-plugin-pages'
-import path from 'path'
 
 export default defineConfig({
   build: {
     target: 'es2015',
     outDir: './dist'
   },
-  alias: {
-    '/@/': `${path.resolve(__dirname, 'src')}/`
+  resolve: {
+    alias: {
+      '/@/': './src/'
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: { 
+        additionalData: `@import "./src/styles/shared";`
+      }
+    }
   },
   plugins: [
     Vue(),

@@ -2,15 +2,15 @@
   <div class="text-center">
     Vite SSR Example Project
   </div>
-  <div><icon-mdi-account /> Coins: {{ user.coins }}</div>
+  <div><icon-mdi-account /> Count: {{ demoStore.count }}</div>
   <button @click="increment">
-     Increment
+    Increment
   </button>
 </template>
 
 <script lang="ts" setup>
-import { useHead } from '@vueuse/head'
 import { computed } from '@vue/runtime-dom'
+import { useHead } from '@vueuse/head'
 import { useStore } from 'vuex'
 
 useHead({
@@ -18,23 +18,16 @@ useHead({
 })
 
 const store = useStore()
-
-const user = computed(() => store.state.user)
-console.log(user.value)
+const demoStore = computed(() => store.state.demo)
 
 function increment() {
   store.dispatch('increment')
 }
-
-console.log(user.value)
-
 </script>
 
-<style lang="scss">
-$color: red;
-
+<style lang="scss" scoped>
 .text-center {
-  color: $color;
+  color: $color-primary;
   font-size: 16px;
 }
 </style>

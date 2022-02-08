@@ -11,7 +11,7 @@ interface Props {
    product: Product;
 }
 
-const props = defineProps<Props>()
+defineProps<Props>()
 </script>
 
 <template>
@@ -34,37 +34,3 @@ const props = defineProps<Props>()
     </div>
   </RouterLink>
 </template>
-
-<style lang="scss" scoped>
-.card {
-   @apply transition-all hover:z-40 hover:scale-105 transform cursor-pointer flex flex-col w-350px m-3 rounded-15px border-light-600 overflow-hidden text-left;
-   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
-
-   .card-img {
-      @apply p-1 flex-shrink-0 h-150px overflow-hidden flex justify-center bg-white;
-
-      img {
-         @apply h-full object-center object-fill;
-      }
-   }
-
-   .card-body {
-      @apply flex flex-col p-2 bg-light-200 mt-2 h-full;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      box-shadow: 0px -3px 3px -3px rgba(0, 0, 0, 0.2);
-
-      .card-title {
-         @apply pb-2 font-bold;
-      }
-
-      .card-detail {
-         @apply h-full;
-      }
-
-      .card-price {
-         @apply font-bold text-blue-400;
-      }
-   }
-}
-</style>

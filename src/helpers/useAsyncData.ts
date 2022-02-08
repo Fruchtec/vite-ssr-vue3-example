@@ -12,7 +12,8 @@ interface Config {
     */
    awaitSetup: boolean;
 }
-export async function useAsyncData<T>(key: string, location: string, config?: Partial<Config>) {
+/* eslint-disable func-names */
+export default async function<T> (key: string, location: string, config?: Partial<Config>) {
   const { isClient, initialState } = useContext()
   // - craete a ref via initialState[key] value
   const responseValue = ref(initialState[key] || null) as Ref<T | null>
@@ -21,18 +22,18 @@ export async function useAsyncData<T>(key: string, location: string, config?: Pa
 
   // - request handler function, to prevent code duplication I created inline function.
   const handler = async (type: 'server' | 'client') => {
-    try {
-      const { data } = await request()
-      responseValue.value = data
-      if (type === 'server') initialState[key] = data
-    } catch (error) {
-      throw error
+    const { data } = await request()
+    responseValue.value = data
+    if (type === 'server') {
+      initialState[key] = data
     }
   }
 
   // remove data from initialState when component unmounts or deactivates
   const removeState = () => {
-    if (isClient) initialState[key] = null
+    if (isClient) {
+      initialState[key] = null
+    }
   }
   onUnmounted(removeState)
   onDeactivated(removeState)
@@ -44,12 +45,18 @@ export async function useAsyncData<T>(key: string, location: string, config?: Pa
     // - if this function is running on client side
 
     // - if initialState[key] already exists mutate responseValue.value
-    if (initialState[key]) responseValue.value = initialState[key]
-    else {
+    /* eslint-disable no-lonely-if */
+    if (initialState[key]) {
+      responseValue.value = initialState[key]
+    } else {
       // - if inital state value does not exist fetch the data in onMounted hook or block setup.
-      const fn = async () => await handler('client')
-      if (config?.awaitSetup) await fn()
-      else onMounted(fn)
+      const fn = async () => handler('client')
+
+      if (config?.awaitSetup) {
+        await fn()
+      } else {
+        onMounted(fn)
+      }
     }
   }
 
