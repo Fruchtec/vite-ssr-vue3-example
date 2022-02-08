@@ -19,7 +19,6 @@
 </template>
 
 <script lang="ts" setup>
-import Card from '/src/components/Card.vue'
 import { computed } from '@vue/runtime-dom'
 import { useHead } from '@vueuse/head'
 import { useStore } from 'vuex'
@@ -54,3 +53,145 @@ const productData = await useAsyncData<Product[]>(
   }
 )
 </script>
+
+<style lang="scss" scoped>
+div {
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+  background-color: gray;
+}
+</style>

@@ -1,2 +1,10 @@
-$color-primary-custom: blue;
+$color-primary-100: red;
 
+// Page reload necessary to see effect.
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': $color-primary-100,
+    ),
+  )
+);

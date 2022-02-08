@@ -3,6 +3,8 @@ import { viteSSR } from 'vite-ssr/vue'
 import routes from '~pages'
 import App from './App.vue'
 import store from './stores'
+import './styles/main.scss'
+// import './styles/variables/element-overrides.scss'
 
 const Options: Parameters<typeof viteSSR>['1'] = {
   routes,
@@ -14,7 +16,6 @@ const Options: Parameters<typeof viteSSR>['1'] = {
 export default viteSSR(App, Options, async params => {
   const {
     app,
-    router,
     initialState,
     isClient
   } = params

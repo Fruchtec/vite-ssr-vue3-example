@@ -32,3 +32,8 @@ defineProps<Props>()
     </div>
   </div>
 </template>
+<style lang="scss" scoped>
+div {
+  background-color: gray;
+}
+</style>

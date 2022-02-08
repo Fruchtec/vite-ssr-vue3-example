@@ -2,9 +2,9 @@ import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import SSR from 'vite-ssr/plugin'
 import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
 import AutoImport from 'unplugin-auto-import/vite'
-import Components  from 'unplugin-vue-components/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Pages from 'vite-plugin-pages'
 
@@ -14,6 +14,7 @@ export default defineConfig({
     outDir: './dist'
   },
   resolve: {
+    extensions: ['.js', '.ts', '.vue', '.mjs'],
     alias: {
       '/@/': './src/'
     }
@@ -22,9 +23,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-         // @use "./src/styles/variables/element-overrides.scss" as *;
-        // @use "node_modules/element-plus/theme-chalk/src/mixins/var.scss" as *;
-        @use "./src/styles/shared.scss" as *;
+          @use "./src/styles/variables/element-overrides.scss" as *;
         `
       }
     }
@@ -33,18 +32,18 @@ export default defineConfig({
     Vue(),
     Pages(),
     SSR(),
-    // AutoImport({
-    //   resolvers: [ElementPlusResolver()],
-    // }),
+    AutoImport({
+      resolvers: [ElementPlusResolver()]
+    }),
     Components({
       resolvers: [
         ElementPlusResolver({
-          ssr: true,
+          ssr: false,
           importStyle: 'sass'
         }),
         IconsResolver({
           prefix: 'icon'
-        }),
+        })
       ]
     }),
     Icons({

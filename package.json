@@ -1,11 +1,12 @@
 {
    "version": "0.0.0",
    "scripts": {
-      "dev": "vite dev",
-      "dev-ssr": "vite-ssr dev",
-      "build": "vite build",
-      "build-ssr": "vite-ssr build",
-      "start": "node ./server.js",
+      "dev:client": "vite dev",
+      "dev:server": "vite-ssr dev",
+      "build:client": "vite build",
+      "build:server": "vite-ssr build",
+      "start:client": "vite preview",
+      "start:server": "node ./server.js",
       "lint": "npm run lint:script && npm run lint:style",
       "lint:script": "eslint src/**/*.{ts,vue} --fix",
       "lint:style": "stylelint src/**/*.{vue,scss} --fix"

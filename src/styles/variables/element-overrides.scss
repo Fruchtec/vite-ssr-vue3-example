@@ -1,7 +1,4 @@
-@forward 'node_modules/element-plus/theme-chalk/src/common/var.scss' with (
-  $colors: (
-    'primary': (
-      'base': red,
-    ),
-  )
-);
+@import "colors";
+@import 'element-plus/theme-chalk/src/var.scss';
+// Imports for other Element Plus overrides below.
+
