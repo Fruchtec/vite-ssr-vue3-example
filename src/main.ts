@@ -1,6 +1,6 @@
 import { createHead } from '@vueuse/head'
 import { viteSSR } from 'vite-ssr/vue'
-import { routes } from '/src/router/router'
+import routes from '~pages'
 import App from '/src/App.vue'
 import store from './stores'
 

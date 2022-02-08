@@ -8,7 +8,7 @@ useHead({
 
 <template>
   <div id="navbar">
-    <RouterLink class="link" :to="{ name: 'Home' }">
+    <RouterLink class="link" :to="{ name: 'Index' }">
       Home
     </RouterLink>
     <RouterLink class="link" :to="{ name: 'Products' }">
