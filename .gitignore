@@ -4,3 +4,5 @@ pnpm-lock.yaml
 _app/dist
 .idea/**
 .vscode
+dist
+dist/**/*
