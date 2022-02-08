@@ -12,8 +12,8 @@ interface Config {
     */
    awaitSetup: boolean;
 }
-/* eslint-disable func-names */
-export default async function<T> (key: string, location: string, config?: Partial<Config>) {
+/* eslint-disable import/prefer-default-export */
+export async function useAsyncData<T>(key: string, location: string, config?: Partial<Config>) {
   const { isClient, initialState } = useContext()
   // - craete a ref via initialState[key] value
   const responseValue = ref(initialState[key] || null) as Ref<T | null>

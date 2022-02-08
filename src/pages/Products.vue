@@ -23,7 +23,7 @@ import Card from '/src/components/Card.vue'
 import { computed } from '@vue/runtime-dom'
 import { useHead } from '@vueuse/head'
 import { useStore } from 'vuex'
-import useAsyncData from '../helpers/useAsyncData'
+import { useAsyncData } from '../helpers/useAsyncData'
 
 useHead({
   title: 'Products'

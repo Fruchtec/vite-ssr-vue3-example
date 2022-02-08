@@ -5,4 +5,3 @@ _app/dist
 .idea/**
 .vscode
 dist
-dist/**/*

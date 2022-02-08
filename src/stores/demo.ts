@@ -3,12 +3,12 @@ const state = () => ({
 })
 
 const getters = {
-  
+
 }
 
 const mutations = {
   INCREMENT(state: any) {
-    state.count = state.count + 1
+    state.count += 1
   }
 }
 
