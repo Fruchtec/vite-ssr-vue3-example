@@ -1,1 +1,0 @@
-#app{font-family:Avenir,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}#app #navbar{@apply w-full h-50px bg-gradient-2 px-2 flex items-center shadow;}#app #app-body{@apply p-3;}.link{@apply p-2 text-dark-500 hover:text-violet-800;}.link.router-link-active{@apply font-bold;}

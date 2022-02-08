@@ -26,5 +26,5 @@ useHead({
 </script>
 
 <style lang="scss">
-@import "styles/main";
+//@import "styles/variables/element-overrides.scss";
 </style>

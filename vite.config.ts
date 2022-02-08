@@ -3,7 +3,9 @@ import Vue from '@vitejs/plugin-vue'
 import SSR from 'vite-ssr/plugin'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
-import Components from 'unplugin-vue-components/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components  from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Pages from 'vite-plugin-pages'
 
 export default defineConfig({
@@ -18,8 +20,12 @@ export default defineConfig({
   },
   css: {
     preprocessorOptions: {
-      scss: { 
-        additionalData: `@import "./src/styles/shared";`
+      scss: {
+        additionalData: `
+         // @use "./src/styles/variables/element-overrides.scss" as *;
+        // @use "node_modules/element-plus/theme-chalk/src/mixins/var.scss" as *;
+        @use "./src/styles/shared.scss" as *;
+        `
       }
     }
   },
@@ -27,11 +33,18 @@ export default defineConfig({
     Vue(),
     Pages(),
     SSR(),
+    // AutoImport({
+    //   resolvers: [ElementPlusResolver()],
+    // }),
     Components({
       resolvers: [
+        ElementPlusResolver({
+          ssr: true,
+          importStyle: 'sass'
+        }),
         IconsResolver({
           prefix: 'icon'
-        })
+        }),
       ]
     }),
     Icons({

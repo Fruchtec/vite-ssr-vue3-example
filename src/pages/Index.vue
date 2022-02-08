@@ -3,9 +3,7 @@
     Vite SSR Example Project
   </div>
   <div><icon-mdi-account /> Count: {{ demoStore.count }}</div>
-  <button @click="increment">
-    Increment
-  </button>
+  <el-button type="primary" @click="increment">Increment</el-button>
 </template>
 
 <script lang="ts" setup>
@@ -27,7 +25,7 @@ function increment() {
 
 <style lang="scss" scoped>
 .text-center {
-  color: $color-primary;
-  font-size: 16px;
+  color: $color-primary-custom;
+  font-size: 32px;
 }
 </style>
