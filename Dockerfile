@@ -11,6 +11,6 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build-ssr
+RUN npm run build:server
 
-CMD npm start
+CMD npm run start:server
